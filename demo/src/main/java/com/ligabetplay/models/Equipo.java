@@ -1,5 +1,5 @@
 package com.ligabetplay.models;
-
+import java.util.ArrayList;
 public class Equipo {
     String nombre;
     int PJ;
@@ -9,6 +9,10 @@ public class Equipo {
     int GF;
     int GC;
     int TP;
+    ArrayList<String> jugadores;
+    ArrayList<String> cuerpoTecnico;
+    ArrayList<String> cuerpoMedico;
+
     public Equipo(String nombre){
         this.nombre = nombre;
     }
@@ -21,6 +25,32 @@ public class Equipo {
         this.GF = GF;
         this.GC = GC;
         this.TP = TP;            
+    }
+    
+    public Equipo(String nombre, ArrayList<String> jugadores, ArrayList<String> cuerpoTecnico, ArrayList<String> cuerpoMedico) {
+        this.nombre = nombre;
+        this.jugadores = jugadores;
+        this.cuerpoTecnico = cuerpoTecnico;
+        this.cuerpoMedico = cuerpoMedico;
+    }
+    
+    public ArrayList<String> getJugadores() {
+        return jugadores;
+    }
+    public void setJugadores(ArrayList<String> jugadores) {
+        this.jugadores = jugadores;
+    }
+    public ArrayList<String> getCuerpoTecnico() {
+        return cuerpoTecnico;
+    }
+    public void setCuerpoTecnico(ArrayList<String> cuerpoTecnico) {
+        this.cuerpoTecnico = cuerpoTecnico;
+    }
+    public ArrayList<String> getCuerpoMedico() {
+        return cuerpoMedico;
+    }
+    public void setCuerpoMedico(ArrayList<String> cuerpoMedico) {
+        this.cuerpoMedico = cuerpoMedico;
     }
     public String getNombre() {
         return nombre;

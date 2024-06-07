@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 import com.ligabetplay.models.Emparejamiento;
 import com.ligabetplay.models.Equipo;
+import com.ligabetplay.models.Jugador;
 public class Main {
     public static void main(String[] args) {
         ArrayList<Equipo> equipos = new ArrayList<Equipo>();
@@ -16,8 +17,9 @@ public class Main {
                 ************************
                 [1] -> Registrar equipos
                 [2] -> Registrar fecha
-                [3] -> Reporte
-                [4] -> Salir
+                [3] -> Módulo de equipos
+                [4] -> Reporte
+                [5] -> Salir
                 Seleccion:     
                 """;
         boolean isActive = true;
@@ -145,6 +147,49 @@ public class Main {
                         System.out.flush();
                         break;
                     case 3:
+                        ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
+                        String menu2 = """
+                                ************************
+                                ***  MÓDULO EQUIPOS  ***
+                                ************************
+                                [1] -> Registrar Jugadores
+                                [2] -> Registrar Cuerpo Técnico
+                                [3] -> Registrar Cuerpo Médico
+                                [4] -> Salir
+                                Seleccion:     
+                                """;
+                        boolean isActive2 = true;
+                        while (isActive2) {
+                            System.out.println(menu2);
+                            try {
+                                int opMenu2 = sc.nextInt();
+                                sc.nextLine();
+                                switch (opMenu2) {
+                                    case 1:
+                                        System.out.println("Ingrese el nombre del equipo");
+                                        String equipo = sc.nextLine();
+                                        if (equipos.contains(equipo))
+
+                                        break;
+                                    case 2:
+
+                                        break;
+                                    case 3:
+
+                                        break;
+                                    case 4: 
+
+                                        break;
+                                }
+                            } catch (InputMismatchException e){
+                                sc.next();
+                                System.out.print("\033[H\033[2J");
+                                System.out.flush(); 
+                                System.out.println("La opción ingresada no es válida");
+                            };
+                        break;
+                        }
+                    case 4:
                         System.out.print("\033[H\033[2J");
                         System.out.flush();
                         Equipo equipoMasGf = null;
@@ -180,7 +225,7 @@ public class Main {
                         System.out.print("\033[H\033[2J");
                         System.out.flush(); 
                         break;
-                    case 4:
+                    case 5:
                         isActive = false;
                         break;
                     default:
